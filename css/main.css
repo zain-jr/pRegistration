@@ -791,6 +791,14 @@ a {
   margin: 10px 0 0;
 }
 
+@media (max-width: 767px) {
+  #header .login-register {
+    font-size: 13px;
+    line-height: 16px;
+    padding: 10px 13px;
+  }
+}
+
 #header .login-register:hover {
   background: #007fff;
 }
@@ -821,6 +829,12 @@ a {
   margin: 100px auto 200px;
 }
 
+@media (max-width: 767px) {
+  .login-registarHolder {
+    margin: 20px auto 50px;
+  }
+}
+
 .login-registarHolder .tabset {
   font-size: 0;
   line-height: 0;
@@ -838,6 +852,21 @@ a {
   letter-spacing: 0;
 }
 
+@media (max-width: 767px) {
+  .login-registarHolder .tabset {
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: -4px;
+  }
+  .login-registarHolder .tabset > * {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 0;
+  }
+}
+
 .login-registarHolder .tabset li {
   width: 50%;
 }
@@ -851,6 +880,12 @@ a {
   background: #fff;
   color: #000;
   border-bottom: 5px solid #e14646;
+}
+
+@media (max-width: 767px) {
+  .login-registarHolder .tabset li.active a {
+    border-bottom: 2px solid #e14646;
+  }
 }
 
 .login-registarHolder .tabset li.active a:after {
@@ -869,6 +904,13 @@ a {
   position: relative;
 }
 
+@media (max-width: 767px) {
+  .login-registarHolder .tabset li a {
+    padding: 10px 4px;
+    border-bottom: 2px solid transparent;
+  }
+}
+
 .login-registarHolder .tabset li a:after {
   position: absolute;
   bottom: -23px;
@@ -882,10 +924,24 @@ a {
   transition: opacity 0.4s  ease, visibility 0.4s ease;
 }
 
+@media (max-width: 767px) {
+  .login-registarHolder .tabset li a:after {
+    border: 5px solid transparent;
+    border-top: 5px solid #e14646;
+    bottom: -12px;
+  }
+}
+
 .login-registarHolder .tabset li a:hover {
   background: #fff;
   color: #000;
   border-bottom: 5px solid #e14646;
+}
+
+@media (max-width: 767px) {
+  .login-registarHolder .tabset li a:hover {
+    border-bottom: 2px solid #e14646;
+  }
 }
 
 .login-registarHolder .tab-content {
@@ -898,6 +954,13 @@ a {
   background: rgba(46, 46, 46, 0.03);
   border-radius: 5px;
   padding: 25px;
+}
+
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form,
+  .login-registarHolder .login-form {
+    padding: 0;
+  }
 }
 
 .login-registarHolder .registration-form .input-holder,
@@ -915,6 +978,14 @@ a {
   width: 100%;
   clear: both;
   overflow: hidden;
+}
+
+.login-registarHolder .registration-form .input-holder.onTop-mobile,
+.login-registarHolder .login-form .input-holder.onTop-mobile {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
 }
 
 .login-registarHolder .registration-form .input-holder textarea,
@@ -991,6 +1062,20 @@ a {
 .login-registarHolder .login-form .input-holder input[type="password"].placeholder {
   color: #616161;
   transition: color 0.5s ease;
+}
+
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form .input-holder textarea,
+  .login-registarHolder .registration-form .input-holder input[type="text"], .login-registarHolder .registration-form .input-holder input[type="tel"], .login-registarHolder .registration-form .input-holder input[type="email"], .login-registarHolder .registration-form .input-holder input[type="password"],
+  .login-registarHolder .login-form .input-holder textarea,
+  .login-registarHolder .login-form .input-holder input[type="text"],
+  .login-registarHolder .login-form .input-holder input[type="tel"],
+  .login-registarHolder .login-form .input-holder input[type="email"],
+  .login-registarHolder .login-form .input-holder input[type="password"] {
+    padding: 6px 105px 6px 25px;
+    font-size: 13px;
+    line-height: 16px;
+  }
 }
 
 .login-registarHolder .registration-form .input-holder textarea:focus,
@@ -1072,6 +1157,14 @@ a {
   height: 100px;
 }
 
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form .input-holder textarea,
+  .login-registarHolder .login-form .input-holder textarea {
+    height: 80px;
+    padding: 9px 5px 6px 25px;
+  }
+}
+
 .login-registarHolder .registration-form .input-holder > label[class^="icon-"], .login-registarHolder .registration-form .input-holder > label[class*="icon-"],
 .login-registarHolder .login-form .input-holder > label[class^="icon-"],
 .login-registarHolder .login-form .input-holder > label[class*="icon-"] {
@@ -1087,6 +1180,16 @@ a {
   z-index: 8;
   text-align: center;
   cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form .input-holder > label[class^="icon-"], .login-registarHolder .registration-form .input-holder > label[class*="icon-"],
+  .login-registarHolder .login-form .input-holder > label[class^="icon-"],
+  .login-registarHolder .login-form .input-holder > label[class*="icon-"] {
+    font-size: 14px;
+    line-height: 50px;
+    width: 30px;
+  }
 }
 
 .login-registarHolder .registration-form .input-holder .border,
@@ -1132,6 +1235,15 @@ a {
   margin: -11px 5px 0 0;
 }
 
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form .input-holder .forgot-pass,
+  .login-registarHolder .login-form .input-holder .forgot-pass {
+    font-size: 11px;
+    line-height: 15px;
+    margin: -8px 5px 0 0;
+  }
+}
+
 .login-registarHolder .registration-form .input-holder .forgot-pass:hover,
 .login-registarHolder .login-form .input-holder .forgot-pass:hover {
   color: #e14646;
@@ -1159,6 +1271,15 @@ a {
   font-size: 20px;
   line-height: 24px;
   transition: background 0.4s ease;
+}
+
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form button[type="submit"],
+  .login-registarHolder .login-form button[type="submit"] {
+    font-size: 16px;
+    line-height: 19px;
+    padding: 8px;
+  }
 }
 
 .login-registarHolder .registration-form button[type="submit"] [class^="icon-"], .login-registarHolder .registration-form button[type="submit"] [class*="icon-"],
@@ -1290,6 +1411,14 @@ a {
   padding: 5px;
 }
 
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form .terms-listing,
+  .login-registarHolder .login-form .terms-listing {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
 .login-registarHolder .registration-form .terms-listing li,
 .login-registarHolder .login-form .terms-listing li {
   display: block;
@@ -1314,6 +1443,13 @@ a {
 .login-registarHolder .login-form .terms-listing li label {
   float: left;
   padding: 0 0 0 10px;
+}
+
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form .terms-listing li label,
+  .login-registarHolder .login-form .terms-listing li label {
+    width: 240px;
+  }
 }
 
 .login-registarHolder .registration-form .company-logo,
@@ -1405,22 +1541,52 @@ a {
   height: auto;
 }
 
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form.agent-info .agent-information {
+    padding: 125px 0 0;
+  }
+}
+
 .login-registarHolder .registration-form .input-holder {
   float: left;
   width: 50%;
+}
+
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form .input-holder {
+    width: 100%;
+    float: none;
+    overflow: hidden;
+  }
 }
 
 .login-registarHolder .registration-form .input-holder input[type="text"], .login-registarHolder .registration-form .input-holder input[type="tel"], .login-registarHolder .registration-form .input-holder input[type="email"], .login-registarHolder .registration-form .input-holder input[type="password"] {
   padding: 6px 10px 6px 50px;
 }
 
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form .input-holder input[type="text"], .login-registarHolder .registration-form .input-holder input[type="tel"], .login-registarHolder .registration-form .input-holder input[type="email"], .login-registarHolder .registration-form .input-holder input[type="password"] {
+    padding: 6px 10px 6px 25px;
+  }
+}
+
 .login-registarHolder .agent-information {
   display: block;
   width: 100%;
   overflow: hidden;
+  position: relative;
   clear: left;
   min-height: 0;
   opacity: 0;
   height: 0;
   transition: min-height 0.5s cubic-bezier(0.05, 1.6, 0.1, 1), opacity 0.5s ease;
+}
+
+@media (max-width: 767px) {
+  .login-registarHolder .agent-information h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 }

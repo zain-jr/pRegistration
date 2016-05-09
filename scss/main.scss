@@ -83,6 +83,11 @@ a{ outline: none;}
     transition: background 0.4s ease;
     margin: 10px 0 0;
     
+    @include media('<tablet'){
+      @include font(13,16);
+      padding: 10px 13px;
+    }
+    
     &:hover{
       background: darken($light-blue, 10%);
     }
@@ -105,12 +110,20 @@ a{ outline: none;}
   padding: 0 0 20px;
   margin: 100px auto 200px;
   
+  @include media('<tablet'){
+    margin: 20px auto 50px;
+  }
+  
   .tabset{
     @extend %listreset;
     @include align-reset(top,18,21);
     text-transform: uppercase;
     text-align: center;
     font-weight: 600;
+    
+    @include media('<tablet'){
+       @include align-reset(top,11,14);
+    }
     
     li{
       width: 50%;
@@ -129,6 +142,10 @@ a{ outline: none;}
           color: $black;
           border-bottom: 5px solid $red;
           
+            @include media('<tablet'){
+              border-bottom: 2px solid $red;
+            }
+          
            &:after{
             opacity: 1;
             visibility: visible;
@@ -146,6 +163,11 @@ a{ outline: none;}
         transition: all 0.4s ease;
         position: relative;
         
+        @include media('<tablet'){
+          padding: 10px 4px;
+          border-bottom: 2px solid transparent;
+        }
+        
         &:after{
           position: absolute;
           bottom: -23px;
@@ -157,12 +179,22 @@ a{ outline: none;}
           opacity: 0;
           visibility: hidden;
           transition: opacity 0.4s  ease, visibility 0.4s ease;
+          
+          @include media('<tablet'){
+            border: 5px solid transparent;
+            border-top: 5px solid $red;
+            bottom: -12px;
+          }
         }
         
         &:hover{
           background: $white;
           color: $black;
           border-bottom: 5px solid $red;
+          
+           @include media('<tablet'){
+             border-bottom: 2px solid $red;
+           }
         }
       }
     }
@@ -177,6 +209,10 @@ a{ outline: none;}
     border-radius: 5px;
     padding: 25px;
     
+    @include media('<tablet'){
+      padding: 0;
+    }
+    
     .input-holder{
       overflow: hidden;
       padding: 5px;
@@ -189,6 +225,13 @@ a{ outline: none;}
         width: 100%;
         clear: both;
         overflow: hidden;
+      }
+      
+      &.onTop-mobile{
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
       }
       
       textarea,  
@@ -208,6 +251,11 @@ a{ outline: none;}
           transition: color 0.5s ease;
         }
         
+         @include media('<tablet'){
+           padding: 6px 105px 6px 25px;
+            @include font(13,16);
+         }
+        
         &:focus {
           color: darken($mix-black, 20%);
           
@@ -226,6 +274,11 @@ a{ outline: none;}
         padding: 9px 5px 6px 50px;
         overflow: auto;
         height: 100px;
+        
+        @include media('<tablet'){
+          height: 80px;
+          padding: 9px 5px 6px 25px;
+        }
       }
       > label[class^="icon-"], > label[class*="icon-"]{
         position: absolute;
@@ -239,6 +292,11 @@ a{ outline: none;}
         z-index: 8;
         text-align: center;
         cursor: pointer;
+        
+         @include media('<tablet'){
+             @include font(14,50);
+             width: 30px;
+         }
       }
       .border {
         display: block;
@@ -276,6 +334,11 @@ a{ outline: none;}
         transition: color 0.4s ease;
         margin: -11px 5px 0 0;
         
+        @include media('<tablet'){
+          @include font(11,15);
+          margin: -8px 5px 0 0;
+        }
+        
         &:hover{
           color: $red;
         }
@@ -298,6 +361,11 @@ a{ outline: none;}
       border-radius: 2px;
       @include font(20,24);
       transition: background 0.4s ease;
+      
+       @include media('<tablet'){
+          @include font(16,19);
+          padding: 8px;
+       }
       
       [class^="icon-"], [class*="icon-"] {
         @include align(middle);
@@ -406,6 +474,10 @@ a{ outline: none;}
       color: $dove-black;
       padding: 5px;
       
+      @include media('<tablet'){
+         @include font(12,15);
+      }
+      
       li{
         display: block;
         padding: 0 0 10px;
@@ -422,6 +494,10 @@ a{ outline: none;}
         label{
           float: left;
           padding: 0 0 0 10px;
+          
+          @include media('<tablet'){
+            width: 240px;
+          }
         }
       }
     }
@@ -497,6 +573,10 @@ a{ outline: none;}
         min-height: 545px;
         opacity: 1;
         height: auto;
+        
+        @include media('<tablet'){
+          padding: 125px 0 0;
+        }
       }
     }
     
@@ -504,17 +584,39 @@ a{ outline: none;}
       float: left;
       width: 50%;
       
-      input[type="text"],input[type="tel"], input[type="email"], input[type="password"] {  padding:6px 10px 6px 50px;}
+      @include media('<tablet'){
+        width: 100%;
+        float: none;
+        overflow: hidden;
+      }
+      
+      input[type="text"],input[type="tel"], input[type="email"], input[type="password"] {
+        padding:6px 10px 6px 50px;
+        
+        @include media('<tablet'){
+          padding: 6px 10px 6px 25px;
+        }
+      }
     }
   }
   .agent-information {
     display: block;
     width: 100%;
     overflow: hidden;
+    position: relative;
     clear: left;
     min-height: 0;
     opacity: 0;
     height: 0;
     transition: min-height 0.5s cubic-bezier(0.05, 1.6, 0.1, 1), opacity 0.5s ease;
+    
+    h1{
+      @include media('<tablet'){
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+    }
   }
 }
