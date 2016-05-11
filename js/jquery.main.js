@@ -24,7 +24,7 @@ $('.hidden-checkfield').change(function(){
 		});
     }
 });
- function previewAddPropertyImg(file, target)
+ function companyLogoUploader(file, target)
  {
 	previewFile(file, target);
 	$(file).closest('.company-logo').find('.picture-holder').css({
