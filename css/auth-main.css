@@ -1471,6 +1471,11 @@ a {
   display: block;
 }
 
+.login-registarHolder .registration-form .company-logo.hover .name-tag,
+.login-registarHolder .login-form .company-logo.hover .name-tag {
+  display: none;
+}
+
 .login-registarHolder .registration-form .company-logo .picture-holder,
 .login-registarHolder .login-form .company-logo .picture-holder {
   position: absolute;
