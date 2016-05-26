@@ -235,6 +235,44 @@ a{ outline: none;}
         }
       }
       
+      &.error {
+        color: $red !important;
+        
+        .error-text {
+          display: block;
+          @include font(13,16);
+          font-weight: 600;
+          text-transform: capitalize;
+          padding: 3px;
+          color: $red !important;
+        }
+        textarea,  
+        input[type="text"],input[type="tel"], input[type="email"], input[type="password"] {
+          color: $red;
+          
+        }
+        > label[class^="icon-"], > label[class*="icon-"]{ color: $red;}
+        .border {
+          &:before{ background: $red;}
+        }
+        .role-opener {
+          border-bottom: 1px solid $red;
+          
+          &:before { color: $red;}
+        }
+        .role-listing {
+           color: $mix-grays !important;
+        }
+        .terms-listing {
+          li {
+            .error-text {
+              @include align(top);
+              padding: 0 5px;
+            }
+          }
+        }
+      }
+      
       textarea,  
       input[type="text"],input[type="tel"], input[type="email"], input[type="password"] {
         border: 0;
