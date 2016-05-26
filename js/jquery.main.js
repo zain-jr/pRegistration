@@ -24,6 +24,48 @@ $('.hidden-checkfield').change(function(){
 		});
     }
 });
+
+$(document).ready(function(){
+	$('.registration-form').find('.role-listing').hide();
+});
+
+$(document).on('click', '.role-opener', function(){
+	$('.registration-form').find('.role-listing').slideToggle();
+	$(this).toggleClass('active');
+});
+
+function countCheckedRoles(){
+	var totalCheckedRoles = 0;
+	$('.userRole-checkbox').each(function() {
+  		if($(this).is(':checked'))
+		  totalCheckedRoles++;
+	});
+	if(totalCheckedRoles == 0)
+		$('.role-opener').html('Other Roles');
+	else	
+		$('.role-opener').html(totalCheckedRoles+' Roles selected');
+}
+
+$(document).on('change', '.userRole-checkbox', function(){
+	countCheckedRoles();
+});
+
+$(document).on('change', '.agent-brokerCheckbox', function(){
+	if($(this).is(':checked')){
+		$('.agent-brokerCheckbox').each(function(){
+			$(this).prop('checked', true);
+		});
+		$('.registration-form').addClass('agent-info')
+	}
+	else {
+		$('.agent-brokerCheckbox').each(function(){
+			$(this).prop('checked', false);
+			$('.registration-form').removeClass('agent-info')
+		});
+	}
+	countCheckedRoles();
+});
+
  function companyLogoUploader(file, target)
  {
 	previewFile(file, target);

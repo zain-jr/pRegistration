@@ -600,6 +600,65 @@ a{ outline: none;}
         }
       }
     }
+    .roles {
+      overflow: hidden;
+      
+      .role-opener {
+        display: block;
+        text-transform: capitalize;
+        cursor: pointer;
+        color: $mix-grays;
+        position: relative;
+        padding: 0 0 10px 50px;
+        border-bottom: 1px solid rgba($mix-grays, 0.5);
+        
+        &:before {
+          font-family: 'icomoon';
+          content: "\e973";
+          position: absolute;
+          top: 0;
+          left: 10px;
+          font-size: 20px;
+          line-height: 1;
+        }
+        &:after{
+          position: absolute;
+          left: 0;
+          right: 100%;
+          bottom: 0;
+          content: '';
+          height: 2px;
+          background: $mix-grays;
+          margin: -1px 0 0;
+          transition:right 0.2s ease;
+        }
+        
+        &.active {
+          &:after { right: 0;}
+        }
+      }
+      .role-listing {
+        @extend %listreset;
+        padding: 10px 0 0;
+        @include align-reset(top,16,19);
+        
+        li {
+          width: 33.33%;
+          overflow: hidden;
+          padding: 5px;
+          
+          @include media('<tablet'){
+            width: 100%;
+          }
+          
+          label,
+          input[type="checkbox"] {
+            @include align(middle);
+            cursor: pointer;
+          }
+        }
+      }
+    }
   }
   .agent-information {
     display: block;
