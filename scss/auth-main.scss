@@ -56,6 +56,10 @@ a{ outline: none;}
 :-ms-input-placeholder { /* Internet Explorer 10+ */
   color: $mix-black;
 }
+body {
+  background: $dove-gray;
+  @include squar(100%, 100%);
+}
 #wrapper {
 	position: relative;
 	width: 100%;
@@ -204,7 +208,7 @@ a{ outline: none;}
   }
   .registration-form,
   .login-form{
-    background:rgba($mix-black, 0.03);
+    background:rgba($white, 0.8);
     border-radius: 5px;
     padding: 25px;
     
@@ -734,6 +738,84 @@ a{ outline: none;}
         top: 0;
         left: 0;
         right: 0;
+      }
+    }
+  }
+}
+.forgot-passwordHolder {
+   min-height: 83vh;
+   white-space: nowrap;
+   text-align: center;
+   max-width: 800px;
+   margin: 0 auto;
+  
+  &:after{
+    height: 83vh;
+    @include align(middle);
+    overflow: hidden;
+    width: 1px;
+    margin: 0 0 0 -5px;
+    content: '';
+  }
+  .forgot-password {
+    @include align(middle);
+    white-space: normal;
+    text-align: left;
+    width: 100%;
+    
+    form {
+      overflow: hidden;
+      background: rgba($white, 0.8);
+      padding: 50px 50px 70px;
+      border-radius: 4px;
+      
+      input[type="text"] {
+        outline: none;
+        @include squar(100%, 50px);
+        display: block;
+        border: 2px solid $gray;
+        padding: 11px 10px;
+        margin: 0;
+        @include font(18,21);
+        transition: border 0.4s ease;
+        
+        &:focus {
+          border-color: $mix-blue;
+          
+          @include placeholder{ color: $mix-blue;}
+        }
+      }
+      input[type="submit"]{
+        display: block;
+        width: 100%;
+        border: 0;
+        text-align: center;
+        color: $white;
+        @include font(18,21);
+        background: $green;
+        font-weight: 600;
+        padding: 12px;
+        transition: background 0.4s ease;
+        
+        &:hover {
+          background: darken($green, 10%);
+        }
+      }
+      .input-holder {
+        overflow: hidden;
+        padding: 0 0 20px;
+        
+        &.error {
+          .error-text { display: block;}
+        }
+        
+        .error-text {
+          color: $red;
+          font-weight: 600;
+          @include font(16,19);
+          padding: 0 0 10px;
+          display: none;
+        }
       }
     }
   }
