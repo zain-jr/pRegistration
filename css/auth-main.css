@@ -1146,6 +1146,16 @@ a {
   }
 }
 
+.login-registarHolder .registration-form .input-holder.onTop-mobile .error-text,
+.login-registarHolder .login-form .input-holder.onTop-mobile .error-text {
+  text-align: center;
+}
+
+.login-registarHolder .registration-form .input-holder .error-text,
+.login-registarHolder .login-form .input-holder .error-text {
+  display: none;
+}
+
 .login-registarHolder .registration-form .input-holder.error,
 .login-registarHolder .login-form .input-holder.error {
   color: #e14646 !important;
@@ -1487,6 +1497,7 @@ a {
   border-radius: 2px;
   font-size: 20px;
   line-height: 24px;
+  outline: none;
   transition: background 0.4s ease;
 }
 
@@ -1527,6 +1538,15 @@ a {
   margin: 25px 50px 0;
   position: relative;
   z-index: 60;
+}
+
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form .agent-check,
+  .login-registarHolder .login-form .agent-check {
+    margin: 25px 20px 0;
+    font-size: 13px;
+    line-height: 15px;
+  }
 }
 
 .login-registarHolder .registration-form .agent-check:after,
@@ -1659,6 +1679,7 @@ a {
 .login-registarHolder .registration-form .terms-listing li label,
 .login-registarHolder .login-form .terms-listing li label {
   float: left;
+  max-width: 650px;
   padding: 0 0 0 10px;
 }
 
@@ -1755,6 +1776,17 @@ a {
 
 .login-registarHolder .registration-form {
   overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: -4px;
+}
+
+.login-registarHolder .registration-form > * {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0;
 }
 
 .login-registarHolder .registration-form.agent-info .agent-information {
@@ -1765,12 +1797,11 @@ a {
 
 @media (max-width: 767px) {
   .login-registarHolder .registration-form.agent-info .agent-information {
-    padding: 125px 0 0;
+    padding: 185px 0 0;
   }
 }
 
 .login-registarHolder .registration-form .input-holder {
-  float: left;
   width: 50%;
 }
 
@@ -1804,6 +1835,13 @@ a {
   position: relative;
   padding: 0 0 10px 50px;
   border-bottom: 1px solid rgba(96, 96, 96, 0.5);
+}
+
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form .roles .role-opener {
+    font-size: 13px;
+    line-height: 15px;
+  }
 }
 
 .login-registarHolder .registration-form .roles .role-opener:before {
@@ -1847,6 +1885,21 @@ a {
   letter-spacing: 0;
 }
 
+@media (max-width: 767px) {
+  .login-registarHolder .registration-form .roles .role-listing {
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: -4px;
+  }
+  .login-registarHolder .registration-form .roles .role-listing > * {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0;
+  }
+}
+
 .login-registarHolder .registration-form .roles .role-listing li {
   width: 33.33%;
   overflow: hidden;
@@ -1875,7 +1928,18 @@ a {
   min-height: 0;
   opacity: 0;
   height: 0;
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: -4px;
   transition: min-height 0.5s cubic-bezier(0.05, 1.6, 0.1, 1), opacity 0.5s ease;
+}
+
+.login-registarHolder .agent-information > * {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0;
 }
 
 @media (max-width: 767px) {
