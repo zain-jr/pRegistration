@@ -108,7 +108,7 @@ body {
 	img { @include img-res;}
 }
 .login-registarHolder{
-  overflow: hidden;
+  @extend %clearfix;
   max-width: 800px;
   padding: 0 0 20px;
   margin: 100px auto 200px;
@@ -120,9 +120,10 @@ body {
   .tabset{
     @extend %listreset;
     @include align-reset(top,18,21);
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-align: center;
     font-weight: 600;
+    margin: 0 -10px;
     
     @include media('<tablet'){
        @include align-reset(top,11,14);
@@ -130,12 +131,47 @@ body {
     
     li{
       width: 50%;
+      padding: 0 10px;
       
       &:last-child{
         
         a{
-          background: $mix-blue;
+          background: $green;
           color: $white;
+          border-radius: 6px;
+        }
+      }
+      
+      &.last-child {
+        padding: 10px;
+        span{
+          display: inline-block;
+          vertical-align: top;
+          text-align: left;
+        }
+        a{
+          background: transparent;
+          text-align: right;
+          color: $mix-blue;
+          display: inline-block;
+          vertical-align: top;
+          padding: 0;
+          border-radius: 0;
+          border: 0;
+          
+          &:after {
+            display: none !important;
+          }
+          
+          &:hover {
+            background: transparent;
+            border: 0;
+            color: $mix-blue;
+            text-decoration: underline;
+            &:after {
+              display: none !important;
+            }
+          }
         }
       }
       
@@ -162,7 +198,7 @@ body {
         background: $light-gray;
         border-bottom: 5px solid transparent;
         color: $dove-black;
-        padding: 10px;
+        padding: 10px 10px 7px;
         transition: all 0.4s ease;
         position: relative;
         
@@ -203,7 +239,6 @@ body {
     }
   }
   .tab-content {
-    overflow: hidden;
     padding: 25px 0 0;
   }
   .registration-form,
@@ -211,6 +246,7 @@ body {
     background:rgba($white, 0.8);
     border-radius: 5px;
     padding: 25px;
+    box-shadow: 0 6px 18px -6px rgba($black, 0.8);
     
     @include media('<tablet'){
       padding: 0;
@@ -397,7 +433,7 @@ body {
     }
     button[type="submit"]{
       border: 0;
-      background: $green;
+      background: $mix-blue;
       text-align: center;
       color: $white;
       font-weight: 600;
@@ -423,7 +459,7 @@ body {
       }
       
       &:hover{
-        background: darken( $green, 5%);
+        background: darken( $mix-blue, 5%);
         
         [class^="icon-"], [class*="icon-"] {
            right: -10px;
@@ -746,7 +782,7 @@ body {
    min-height: 83vh;
    white-space: nowrap;
    text-align: center;
-   max-width: 800px;
+   max-width: 650px;
    margin: 0 auto;
   
   &:after{
@@ -764,17 +800,23 @@ body {
     width: 100%;
     
     form {
-      overflow: hidden;
+      box-shadow: 0 6px 18px -6px rgba($black, 0.8);
       background: rgba($white, 0.8);
-      padding: 50px 50px 70px;
+      padding: 50px 50px;
       border-radius: 4px;
       
-      input[type="text"] {
+      
+      @include media('<tablet'){
+        padding: 25px 25px 40px;
+      }
+      
+      input[type="text"], input[type="email"] {
         outline: none;
         @include squar(100%, 50px);
         display: block;
-        border: 2px solid $gray;
-        padding: 11px 10px;
+        border: 0;
+        border-bottom: 2px solid $gray;
+        padding: 11px 30px;
         margin: 0;
         @include font(18,21);
         transition: border 0.4s ease;
@@ -792,21 +834,49 @@ body {
         text-align: center;
         color: $white;
         @include font(18,21);
-        background: $green;
+        background: $mix-blue;
         font-weight: 600;
         padding: 12px;
         transition: background 0.4s ease;
         
         &:hover {
-          background: darken($green, 10%);
+          background: darken($mix-blue, 10%);
         }
+      }
+      .btn-log {
+        @include align(top);
+        margin: 30px 0 0;
+      }
+      .forgot-heading {
+        display: block;
+        font-weight: 600;
+        text-align: center;
+        padding: 0 0 10px;
+        color: $dove-black;
       }
       .input-holder {
         overflow: hidden;
-        padding: 0 0 20px;
+        margin: 0 0 20px;
+        position: relative;
         
         &.error {
+          label {
+            color: $red;
+            margin: 7px 0 0;
+           }
           .error-text { display: block;}
+          input[type="text"], input[type="email"] {
+            border-color: $red;
+          }
+        }
+        
+        label {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          cursor: pointer;
+          margin: -7px 0 0;
+          color: $gray;
         }
         
         .error-text {

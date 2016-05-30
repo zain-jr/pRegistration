@@ -642,7 +642,7 @@ th {
   list-style: none;
 }
 
-.clearfix:after, #header:after {
+.clearfix:after, #header:after, .login-registarHolder:after {
   content: '';
   display: block;
   clear: both;
@@ -985,7 +985,6 @@ body {
 }
 
 .login-registarHolder {
-  overflow: hidden;
   max-width: 800px;
   padding: 0 0 20px;
   margin: 100px auto 200px;
@@ -1001,9 +1000,10 @@ body {
   font-size: 0;
   line-height: 0;
   letter-spacing: -4px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   text-align: center;
   font-weight: 600;
+  margin: 0 -10px;
 }
 
 .login-registarHolder .tabset > * {
@@ -1031,11 +1031,49 @@ body {
 
 .login-registarHolder .tabset li {
   width: 50%;
+  padding: 0 10px;
 }
 
 .login-registarHolder .tabset li:last-child a {
-  background: #489ddd;
+  background: #58a36f;
   color: #fff;
+  border-radius: 6px;
+}
+
+.login-registarHolder .tabset li.last-child {
+  padding: 10px;
+}
+
+.login-registarHolder .tabset li.last-child span {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+
+.login-registarHolder .tabset li.last-child a {
+  background: transparent;
+  text-align: right;
+  color: #489ddd;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+  border-radius: 0;
+  border: 0;
+}
+
+.login-registarHolder .tabset li.last-child a:after {
+  display: none !important;
+}
+
+.login-registarHolder .tabset li.last-child a:hover {
+  background: transparent;
+  border: 0;
+  color: #489ddd;
+  text-decoration: underline;
+}
+
+.login-registarHolder .tabset li.last-child a:hover:after {
+  display: none !important;
 }
 
 .login-registarHolder .tabset li.active a {
@@ -1061,7 +1099,7 @@ body {
   background: #dde2e8;
   border-bottom: 5px solid transparent;
   color: #363636;
-  padding: 10px;
+  padding: 10px 10px 7px;
   transition: all 0.4s ease;
   position: relative;
 }
@@ -1107,7 +1145,6 @@ body {
 }
 
 .login-registarHolder .tab-content {
-  overflow: hidden;
   padding: 25px 0 0;
 }
 
@@ -1116,6 +1153,7 @@ body {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   padding: 25px;
+  box-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.8);
 }
 
 @media (max-width: 767px) {
@@ -1493,7 +1531,7 @@ body {
 .login-registarHolder .registration-form button[type="submit"],
 .login-registarHolder .login-form button[type="submit"] {
   border: 0;
-  background: #58a36f;
+  background: #489ddd;
   text-align: center;
   color: #fff;
   font-weight: 600;
@@ -1529,7 +1567,7 @@ body {
 
 .login-registarHolder .registration-form button[type="submit"]:hover,
 .login-registarHolder .login-form button[type="submit"]:hover {
-  background: #4f9264;
+  background: #3291d9;
 }
 
 .login-registarHolder .registration-form button[type="submit"]:hover [class^="icon-"], .login-registarHolder .registration-form button[type="submit"]:hover [class*="icon-"],
@@ -1961,7 +1999,7 @@ body {
   min-height: 83vh;
   white-space: nowrap;
   text-align: center;
-  max-width: 800px;
+  max-width: 650px;
   margin: 0 auto;
 }
 
@@ -1984,47 +2022,54 @@ body {
 }
 
 .forgot-passwordHolder .forgot-password form {
-  overflow: hidden;
+  box-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.8);
   background: rgba(255, 255, 255, 0.8);
-  padding: 50px 50px 70px;
+  padding: 50px 50px;
   border-radius: 4px;
 }
 
-.forgot-passwordHolder .forgot-password form input[type="text"] {
+@media (max-width: 767px) {
+  .forgot-passwordHolder .forgot-password form {
+    padding: 25px 25px 40px;
+  }
+}
+
+.forgot-passwordHolder .forgot-password form input[type="text"], .forgot-passwordHolder .forgot-password form input[type="email"] {
   outline: none;
   width: 100%;
   height: 50px;
   display: block;
-  border: 2px solid #999;
-  padding: 11px 10px;
+  border: 0;
+  border-bottom: 2px solid #999;
+  padding: 11px 30px;
   margin: 0;
   font-size: 18px;
   line-height: 21px;
   transition: border 0.4s ease;
 }
 
-.forgot-passwordHolder .forgot-password form input[type="text"]:focus {
+.forgot-passwordHolder .forgot-password form input[type="text"]:focus, .forgot-passwordHolder .forgot-password form input[type="email"]:focus {
   border-color: #489ddd;
 }
 
-.forgot-passwordHolder .forgot-password form input[type="text"]:focus::-webkit-input-placeholder {
+.forgot-passwordHolder .forgot-password form input[type="text"]:focus::-webkit-input-placeholder, .forgot-passwordHolder .forgot-password form input[type="email"]:focus::-webkit-input-placeholder {
   color: #489ddd;
 }
 
-.forgot-passwordHolder .forgot-password form input[type="text"]:focus::-moz-placeholder {
+.forgot-passwordHolder .forgot-password form input[type="text"]:focus::-moz-placeholder, .forgot-passwordHolder .forgot-password form input[type="email"]:focus::-moz-placeholder {
   opacity: 1;
   color: #489ddd;
 }
 
-.forgot-passwordHolder .forgot-password form input[type="text"]:focus:-moz-placeholder {
+.forgot-passwordHolder .forgot-password form input[type="text"]:focus:-moz-placeholder, .forgot-passwordHolder .forgot-password form input[type="email"]:focus:-moz-placeholder {
   color: #489ddd;
 }
 
-.forgot-passwordHolder .forgot-password form input[type="text"]:focus:-ms-input-placeholder {
+.forgot-passwordHolder .forgot-password form input[type="text"]:focus:-ms-input-placeholder, .forgot-passwordHolder .forgot-password form input[type="email"]:focus:-ms-input-placeholder {
   color: #489ddd;
 }
 
-.forgot-passwordHolder .forgot-password form input[type="text"]:focus.placeholder {
+.forgot-passwordHolder .forgot-password form input[type="text"]:focus.placeholder, .forgot-passwordHolder .forgot-password form input[type="email"]:focus.placeholder {
   color: #489ddd;
 }
 
@@ -2036,23 +2081,56 @@ body {
   color: #fff;
   font-size: 18px;
   line-height: 21px;
-  background: #58a36f;
+  background: #489ddd;
   font-weight: 600;
   padding: 12px;
   transition: background 0.4s ease;
 }
 
 .forgot-passwordHolder .forgot-password form input[type="submit"]:hover {
-  background: #468258;
+  background: #2685cc;
+}
+
+.forgot-passwordHolder .forgot-password form .btn-log {
+  display: inline-block;
+  vertical-align: top;
+  margin: 30px 0 0;
+}
+
+.forgot-passwordHolder .forgot-password form .forgot-heading {
+  display: block;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 0 10px;
+  color: #363636;
 }
 
 .forgot-passwordHolder .forgot-password form .input-holder {
   overflow: hidden;
-  padding: 0 0 20px;
+  margin: 0 0 20px;
+  position: relative;
+}
+
+.forgot-passwordHolder .forgot-password form .input-holder.error label {
+  color: #e14646;
+  margin: 7px 0 0;
 }
 
 .forgot-passwordHolder .forgot-password form .input-holder.error .error-text {
   display: block;
+}
+
+.forgot-passwordHolder .forgot-password form .input-holder.error input[type="text"], .forgot-passwordHolder .forgot-password form .input-holder.error input[type="email"] {
+  border-color: #e14646;
+}
+
+.forgot-passwordHolder .forgot-password form .input-holder label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  cursor: pointer;
+  margin: -7px 0 0;
+  color: #999;
 }
 
 .forgot-passwordHolder .forgot-password form .input-holder .error-text {
