@@ -566,11 +566,14 @@ body {
       .border {
         &:before{ background: $red;}
       }
+      .societiesBlock-opener,
       .role-opener {
         border-bottom: 1px solid $red;
         
         &:before { color: $red;}
       }
+      
+      .societiesBlock-listing ,
       .role-listing {
           color: $mix-grays !important;
       }
@@ -956,9 +959,11 @@ body {
       }
     }
   }
+  .selectMultipalsocieties,
   .roles {
     overflow: hidden;
     
+    .societiesBlock-opener,
     .role-opener {
       display: block;
       text-transform: capitalize;
@@ -997,6 +1002,14 @@ body {
         &:after { right: 0;}
       }
     }
+    .societiesBlock-opener{
+      &:before {
+        content: "\e929";
+        left: 2px;
+      }
+    }
+
+    .societiesBlock-listing,
     .role-listing {
       @extend %listreset;
       padding: 10px 0 0;

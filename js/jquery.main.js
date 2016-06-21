@@ -25,6 +25,15 @@ $(document).on('click', '.role-opener', function(){
 	$(this).toggleClass('active');
 });
 
+$(document).ready(function(){
+	$('.registration-form').find('.societiesBlock-listing').hide();
+});
+
+$(document).on('click', '.societiesBlock-opener', function(){
+	$('.registration-form').find('.societiesBlock-listing').slideToggle();
+	$(this).toggleClass('active');
+});
+
 function countCheckedRoles(){
 	var totalCheckedRoles = 0;
 	$('.userRole-checkbox').each(function() {
@@ -39,6 +48,30 @@ function countCheckedRoles(){
 
 $(document).on('change', '.userRole-checkbox', function(){
 	countCheckedRoles();
+});
+
+
+function countCheckedSocieties(){
+	var totalCheckedSocieties = 0;
+	$('.selectSociety-checkbox').each(function() {
+  		if($(this).is(':checked'))
+		  totalCheckedSocieties++;
+	});
+	if(totalCheckedSocieties == 0)
+		$('.societiesBlock-opener').html('Select Societies You Deal In:');
+	else{
+		
+		if(totalCheckedSocieties > 1){
+			$('.societiesBlock-opener').html(totalCheckedSocieties+' Societies selected');
+		}
+		else{
+			$('.societiesBlock-opener').html(totalCheckedSocieties+' Society selected');
+		}
+	}
+}
+
+$(document).on('change', '.selectSociety-checkbox', function(){
+	countCheckedSocieties();
 });
 
 $(document).on('change', '.agent-brokerCheckbox', function(){
