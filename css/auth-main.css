@@ -2362,7 +2362,7 @@ body {
 }
 
 .registration-form .input-holder input[type="text"]#search-society, .registration-form .input-holder input[type="tel"]#search-society, .registration-form .input-holder input[type="email"]#search-society, .registration-form .input-holder input[type="password"]#search-society {
-  padding: 6px 150px 6px 50px;
+  padding: 6px 170px 6px 50px;
 }
 
 @media (max-width: 767px) {
@@ -2377,12 +2377,10 @@ body {
   }
 }
 
-.registration-form .selectMultipalsocieties,
 .registration-form .roles {
   overflow: hidden;
 }
 
-.registration-form .selectMultipalsocieties .role-opener,
 .registration-form .roles .role-opener {
   display: block;
   text-transform: capitalize;
@@ -2394,14 +2392,12 @@ body {
 }
 
 @media (max-width: 767px) {
-  .registration-form .selectMultipalsocieties .role-opener,
   .registration-form .roles .role-opener {
     font-size: 13px;
     line-height: 15px;
   }
 }
 
-.registration-form .selectMultipalsocieties .role-opener:before,
 .registration-form .roles .role-opener:before {
   font-family: 'icomoon';
   content: "\e973";
@@ -2412,7 +2408,6 @@ body {
   line-height: 1;
 }
 
-.registration-form .selectMultipalsocieties .role-opener:after,
 .registration-form .roles .role-opener:after {
   position: absolute;
   left: 0;
@@ -2425,7 +2420,6 @@ body {
   transition: right 0.2s ease;
 }
 
-.registration-form .selectMultipalsocieties .role-opener.active:after,
 .registration-form .roles .role-opener.active:after {
   right: 0;
 }
@@ -2508,6 +2502,7 @@ body {
   line-height: 19px;
   right: 10px;
   display: block;
+  max-width: 165px;
 }
 
 @media (max-width: 767px) {

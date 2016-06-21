@@ -929,6 +929,7 @@ body {
     }
   }
 }
+
 .registration-form{
   overflow: hidden;
   @include align-reset(top,18,21);
@@ -958,7 +959,7 @@ body {
       padding:6px 10px 6px 50px;
       
       &#search-society{
-        padding:6px 150px 6px 50px;
+        padding:6px 170px 6px 50px;
 
         @include media('<tablet'){
           padding:6px 125px 6px 30px;
@@ -970,7 +971,7 @@ body {
       }
     }
   }
-  .selectMultipalsocieties,
+
   .roles {
     overflow: hidden;
     
@@ -1058,12 +1059,14 @@ body {
     @include font(14,19);
     right: 10px;
     display: block;
+    max-width: 165px;
 
     @include media('<tablet'){
       @include font(12,15);
     }
   }
 }
+
 .agent-information {
   display: block;
   width: 100%;
