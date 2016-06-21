@@ -649,10 +649,8 @@ th {
 
 #nav .main-navigation, #nav .main-navigation li .dropDown, .login-registarHolder .tabset, .forgot-form .terms-listing,
 .registration-form .terms-listing,
-.login-form .terms-listing, .registration-form .selectMultipalsocieties .societiesBlock-listing,
-.registration-form .selectMultipalsocieties .role-listing,
-.registration-form .roles .societiesBlock-listing,
-.registration-form .roles .role-listing, #footer .cols-holder .col ul {
+.login-form .terms-listing, .registration-form .societiesBlock-listing,
+.registration-form .role-listing, #footer .cols-holder .col ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1538,6 +1536,12 @@ body {
   overflow: hidden;
 }
 
+.forgot-form .input-holder.no-indent,
+.registration-form .input-holder.no-indent,
+.login-form .input-holder.no-indent {
+  margin: 0;
+}
+
 @media (max-width: 767px) {
   .forgot-form .input-holder.onTop-mobile,
   .registration-form .input-holder.onTop-mobile,
@@ -1608,20 +1612,14 @@ body {
   background: #e14646;
 }
 
-.forgot-form .input-holder.error .societiesBlock-opener,
 .forgot-form .input-holder.error .role-opener,
-.registration-form .input-holder.error .societiesBlock-opener,
 .registration-form .input-holder.error .role-opener,
-.login-form .input-holder.error .societiesBlock-opener,
 .login-form .input-holder.error .role-opener {
   border-bottom: 1px solid #e14646;
 }
 
-.forgot-form .input-holder.error .societiesBlock-opener:before,
 .forgot-form .input-holder.error .role-opener:before,
-.registration-form .input-holder.error .societiesBlock-opener:before,
 .registration-form .input-holder.error .role-opener:before,
-.login-form .input-holder.error .societiesBlock-opener:before,
 .login-form .input-holder.error .role-opener:before {
   color: #e14646;
 }
@@ -2363,6 +2361,16 @@ body {
   padding: 6px 10px 6px 50px;
 }
 
+.registration-form .input-holder input[type="text"]#search-society, .registration-form .input-holder input[type="tel"]#search-society, .registration-form .input-holder input[type="email"]#search-society, .registration-form .input-holder input[type="password"]#search-society {
+  padding: 6px 150px 6px 50px;
+}
+
+@media (max-width: 767px) {
+  .registration-form .input-holder input[type="text"]#search-society, .registration-form .input-holder input[type="tel"]#search-society, .registration-form .input-holder input[type="email"]#search-society, .registration-form .input-holder input[type="password"]#search-society {
+    padding: 6px 125px 6px 30px;
+  }
+}
+
 @media (max-width: 767px) {
   .registration-form .input-holder input[type="text"], .registration-form .input-holder input[type="tel"], .registration-form .input-holder input[type="email"], .registration-form .input-holder input[type="password"] {
     padding: 6px 10px 6px 25px;
@@ -2374,9 +2382,7 @@ body {
   overflow: hidden;
 }
 
-.registration-form .selectMultipalsocieties .societiesBlock-opener,
 .registration-form .selectMultipalsocieties .role-opener,
-.registration-form .roles .societiesBlock-opener,
 .registration-form .roles .role-opener {
   display: block;
   text-transform: capitalize;
@@ -2388,18 +2394,14 @@ body {
 }
 
 @media (max-width: 767px) {
-  .registration-form .selectMultipalsocieties .societiesBlock-opener,
   .registration-form .selectMultipalsocieties .role-opener,
-  .registration-form .roles .societiesBlock-opener,
   .registration-form .roles .role-opener {
     font-size: 13px;
     line-height: 15px;
   }
 }
 
-.registration-form .selectMultipalsocieties .societiesBlock-opener:before,
 .registration-form .selectMultipalsocieties .role-opener:before,
-.registration-form .roles .societiesBlock-opener:before,
 .registration-form .roles .role-opener:before {
   font-family: 'icomoon';
   content: "\e973";
@@ -2410,9 +2412,7 @@ body {
   line-height: 1;
 }
 
-.registration-form .selectMultipalsocieties .societiesBlock-opener:after,
 .registration-form .selectMultipalsocieties .role-opener:after,
-.registration-form .roles .societiesBlock-opener:after,
 .registration-form .roles .role-opener:after {
   position: absolute;
   left: 0;
@@ -2425,33 +2425,21 @@ body {
   transition: right 0.2s ease;
 }
 
-.registration-form .selectMultipalsocieties .societiesBlock-opener.active:after,
 .registration-form .selectMultipalsocieties .role-opener.active:after,
-.registration-form .roles .societiesBlock-opener.active:after,
 .registration-form .roles .role-opener.active:after {
   right: 0;
 }
 
-.registration-form .selectMultipalsocieties .societiesBlock-opener:before,
-.registration-form .roles .societiesBlock-opener:before {
-  content: "\e929";
-  left: 2px;
-}
-
-.registration-form .selectMultipalsocieties .societiesBlock-listing,
-.registration-form .selectMultipalsocieties .role-listing,
-.registration-form .roles .societiesBlock-listing,
-.registration-form .roles .role-listing {
+.registration-form .societiesBlock-listing,
+.registration-form .role-listing {
   padding: 10px 0 0;
   font-size: 0;
   line-height: 0;
   letter-spacing: -4px;
 }
 
-.registration-form .selectMultipalsocieties .societiesBlock-listing > *,
-.registration-form .selectMultipalsocieties .role-listing > *,
-.registration-form .roles .societiesBlock-listing > *,
-.registration-form .roles .role-listing > * {
+.registration-form .societiesBlock-listing > *,
+.registration-form .role-listing > * {
   display: inline-block;
   vertical-align: top;
   font-size: 16px;
@@ -2460,18 +2448,14 @@ body {
 }
 
 @media (max-width: 767px) {
-  .registration-form .selectMultipalsocieties .societiesBlock-listing,
-  .registration-form .selectMultipalsocieties .role-listing,
-  .registration-form .roles .societiesBlock-listing,
-  .registration-form .roles .role-listing {
+  .registration-form .societiesBlock-listing,
+  .registration-form .role-listing {
     font-size: 0;
     line-height: 0;
     letter-spacing: -4px;
   }
-  .registration-form .selectMultipalsocieties .societiesBlock-listing > *,
-  .registration-form .selectMultipalsocieties .role-listing > *,
-  .registration-form .roles .societiesBlock-listing > *,
-  .registration-form .roles .role-listing > * {
+  .registration-form .societiesBlock-listing > *,
+  .registration-form .role-listing > * {
     display: inline-block;
     vertical-align: top;
     font-size: 13px;
@@ -2480,35 +2464,57 @@ body {
   }
 }
 
-.registration-form .selectMultipalsocieties .societiesBlock-listing li,
-.registration-form .selectMultipalsocieties .role-listing li,
-.registration-form .roles .societiesBlock-listing li,
-.registration-form .roles .role-listing li {
+.registration-form .societiesBlock-listing li,
+.registration-form .role-listing li {
   width: 33.33%;
   overflow: hidden;
   padding: 5px;
 }
 
 @media (max-width: 767px) {
-  .registration-form .selectMultipalsocieties .societiesBlock-listing li,
-  .registration-form .selectMultipalsocieties .role-listing li,
-  .registration-form .roles .societiesBlock-listing li,
-  .registration-form .roles .role-listing li {
+  .registration-form .societiesBlock-listing li,
+  .registration-form .role-listing li {
     width: 100%;
   }
 }
 
-.registration-form .selectMultipalsocieties .societiesBlock-listing li label,
-.registration-form .selectMultipalsocieties .societiesBlock-listing li input[type="checkbox"],
-.registration-form .selectMultipalsocieties .role-listing li label,
-.registration-form .selectMultipalsocieties .role-listing li input[type="checkbox"],
-.registration-form .roles .societiesBlock-listing li label,
-.registration-form .roles .societiesBlock-listing li input[type="checkbox"],
-.registration-form .roles .role-listing li label,
-.registration-form .roles .role-listing li input[type="checkbox"] {
+.registration-form .societiesBlock-listing li label,
+.registration-form .societiesBlock-listing li input[type="checkbox"],
+.registration-form .role-listing li label,
+.registration-form .role-listing li input[type="checkbox"] {
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
+}
+
+.registration-form .societiesBlock-listing {
+  padding: 0;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 0 1px 1px;
+  margin: -5px 0 0;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.registration-form .calculatedSocieties {
+  position: absolute;
+  top: 50%;
+  margin: -7px 0 0;
+  color: #133783;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  right: 10px;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .registration-form .calculatedSocieties {
+    font-size: 12px;
+    line-height: 15px;
+  }
 }
 
 .agent-information {

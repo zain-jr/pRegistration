@@ -1,3 +1,15 @@
+$(document).on('keyup', '#search-society', function(){
+	var searchValue = $(this).val();
+	$('.societiesBlock-listing').find('li').each( function(){
+		var re = new RegExp(searchValue, 'gi');
+		 if($(this).text().match(re) == null){
+		 	$(this).hide();
+		 }else{
+			 $(this).show();
+		 }
+	});
+});
+
 $('.hidden-checkfield').change(function(){
     if($(this).is(":checked")) {
         $('.registration-form').addClass("agent-info");
@@ -25,15 +37,6 @@ $(document).on('click', '.role-opener', function(){
 	$(this).toggleClass('active');
 });
 
-$(document).ready(function(){
-	$('.registration-form').find('.societiesBlock-listing').hide();
-});
-
-$(document).on('click', '.societiesBlock-opener', function(){
-	$('.registration-form').find('.societiesBlock-listing').slideToggle();
-	$(this).toggleClass('active');
-});
-
 function countCheckedRoles(){
 	var totalCheckedRoles = 0;
 	$('.userRole-checkbox').each(function() {
@@ -43,35 +46,35 @@ function countCheckedRoles(){
 	if(totalCheckedRoles == 0)
 		$('.role-opener').html('Other Roles');
 	else	
-		$('.role-opener').html(totalCheckedRoles+' Roles selected');
+		$('.role-opener').html('Other Roles ( '+totalCheckedRoles+' Selected )');
 }
 
 $(document).on('change', '.userRole-checkbox', function(){
 	countCheckedRoles();
 });
 
-
-function countCheckedSocieties(){
-	var totalCheckedSocieties = 0;
-	$('.selectSociety-checkbox').each(function() {
-  		if($(this).is(':checked'))
-		  totalCheckedSocieties++;
-	});
-	if(totalCheckedSocieties == 0)
-		$('.societiesBlock-opener').html('Select Societies You Deal In:');
-	else{
-		
-		if(totalCheckedSocieties > 1){
-			$('.societiesBlock-opener').html(totalCheckedSocieties+' Societies selected');
+function countSelectedSocieties(){
+	var totalSelectedSocieties = 0;
+	$('.selectSociety-checkbox').each( function(){
+		if($(this).is(':checked')){
+			totalSelectedSocieties++;	
 		}
-		else{
-			$('.societiesBlock-opener').html(totalCheckedSocieties+' Society selected');
+		if(totalSelectedSocieties > 1){
+			$('.calculatedSocieties').text(totalSelectedSocieties+' Societies Selected');			
 		}
-	}
+		else {
+			if(totalSelectedSocieties == 1){
+				$('.calculatedSocieties').text(totalSelectedSocieties+' Society Selected');
+			}
+			else{
+				$('.calculatedSocieties').text('');
+			}
+		}
+	})
 }
 
 $(document).on('change', '.selectSociety-checkbox', function(){
-	countCheckedSocieties();
+	countSelectedSocieties();
 });
 
 $(document).on('change', '.agent-brokerCheckbox', function(){
