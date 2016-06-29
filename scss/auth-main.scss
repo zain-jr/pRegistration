@@ -1387,3 +1387,19 @@ body {
 		margin: -2px 0 0;
 	}
 }
+.forgot-form {
+  .global-successMessage {
+    display: none !important;
+  }
+  &.password-sent {
+    .global-successMessage {
+      display: block !important;
+    }
+    .forgot-heading, .input-holder, button[type="submit"]{
+      display: none !important;
+    }
+    .btn-log {
+      margin: 0;
+    }
+  }
+}
